@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 再聚樱花庄</title>
+    <link>https://blog.mashiro.nl/posts/</link>
+    <description>Recent content in Posts on 再聚樱花庄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://mashiro.nl/&#34;&gt;Mashiro&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 06 Nov 2021 21:31:08 +0000</lastBuildDate><atom:link href="https://blog.mashiro.nl/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中科大Hackergame 2021</title>
+      <link>https://blog.mashiro.nl/posts/technology/%E4%B8%AD%E7%A7%91%E5%A4%A7hackergame-2021/</link>
+      <pubDate>Sat, 06 Nov 2021 21:31:08 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/%E4%B8%AD%E7%A7%91%E5%A4%A7hackergame-2021/</guid>
+      <description>前言 又菜又爱玩的 Mashiro 最近又开了一个新坑，之前了解到中科大举办的CTF比赛，对新手来说比较友好，所以作为网安“带师”的我自然不会错过啦！ （指当炮灰 这次拉上</description>
+    </item>
+    
+    <item>
+      <title>Code Runner快速更改Python解释器路径</title>
+      <link>https://blog.mashiro.nl/posts/technology/code-runner%E5%BF%AB%E9%80%9F%E6%9B%B4%E6%94%B9python%E8%A7%A3%E9%87%8A%E5%99%A8%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Mon, 02 Aug 2021 16:30:45 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/code-runner%E5%BF%AB%E9%80%9F%E6%9B%B4%E6%94%B9python%E8%A7%A3%E9%87%8A%E5%99%A8%E8%B7%AF%E5%BE%84/</guid>
+      <description>前言 目前主要使用 VS Code + WSL2 进行开发，经常需要更换 Python 运行环境，但是 Code Runner 插件默认会使用 python -u 去执行文件，而无法和 Python 插件进行配合，所以要在配置文件中反复更改解释</description>
+    </item>
+    
+    <item>
+      <title>迁移&amp;杂谈</title>
+      <link>https://blog.mashiro.nl/posts/daliy/%E8%BF%81%E7%A7%BB%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Sat, 16 Jan 2021 23:00:07 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/daliy/%E8%BF%81%E7%A7%BB%E6%9D%82%E8%B0%88/</guid>
+      <description>不知不觉，搭建个人博客也有半年的时间了。说来惭愧，除了最开始因为三分钟热度写了一点东西，剩下的几个月一直就在摸鱼。唉！懒人叹气 ~ 疫情时家里蹲，倒是份难</description>
+    </item>
+    
+    <item>
+      <title>「转载」一次成功的反击（报复）</title>
+      <link>https://blog.mashiro.nl/posts/daliy/%E8%BD%AC%E8%BD%BD%E4%B8%80%E6%AC%A1%E6%88%90%E5%8A%9F%E7%9A%84%E5%8F%8D%E5%87%BB%E6%8A%A5%E5%A4%8D/</link>
+      <pubDate>Fri, 21 Aug 2020 22:05:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/daliy/%E8%BD%AC%E8%BD%BD%E4%B8%80%E6%AC%A1%E6%88%90%E5%8A%9F%E7%9A%84%E5%8F%8D%E5%87%BB%E6%8A%A5%E5%A4%8D/</guid>
+      <description>原文地址 https://blog.shelike.me/index.php/2018/06/14/一次成功的反击 得到原作者的同意转载，版权解释归原作者</description>
+    </item>
+    
+    <item>
+      <title>服务器基础安全配置</title>
+      <link>https://blog.mashiro.nl/posts/technology/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 19 Aug 2020 21:37:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/</guid>
+      <description>一开始玩VPS的时候其实只是为了能做个正向代理，所以搭好环境后就去上网冲浪了，对安全的问题一直没有过多的关注。但是最近上服务器检查情况时，看到了一些奇</description>
+    </item>
+    
+    <item>
+      <title>Docker容器安装软件踩坑及换源</title>
+      <link>https://blog.mashiro.nl/posts/technology/docker%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%B8%A9%E5%9D%91%E5%8F%8A%E6%8D%A2%E6%BA%90/</link>
+      <pubDate>Thu, 13 Aug 2020 08:23:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/docker%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%B8%A9%E5%9D%91%E5%8F%8A%E6%8D%A2%E6%BA%90/</guid>
+      <description>换源网上一搜多的是教程，但是这些教程都没讲清楚，一不小心可能就掉坑里。 没错，说的就是你，CSDN垃圾回收站。 因为最近重装了一次电脑，而 Docker Desktop 默认装在C盘</description>
+    </item>
+    
+    <item>
+      <title>创建一个属于自己的域名邮箱</title>
+      <link>https://blog.mashiro.nl/posts/daliy/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/</link>
+      <pubDate>Sun, 21 Jun 2020 00:17:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/daliy/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/</guid>
+      <description>写在前面 用这种邮箱有一个弊端，就是发出的邮件容易被判定为垃圾邮件(此处特别&amp;quot;表扬&amp;quot;QQ邮箱)，所以发一些重要邮件时不建议使用这种邮</description>
+    </item>
+    
+    <item>
+      <title>自定义Cloudflare节点</title>
+      <link>https://blog.mashiro.nl/posts/technology/%E8%87%AA%E5%AE%9A%E4%B9%89cloudflare%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Tue, 16 Jun 2020 22:33:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/%E8%87%AA%E5%AE%9A%E4%B9%89cloudflare%E8%8A%82%E7%82%B9/</guid>
+      <description>因为现在的博客是部署在VULTR的日本机房，走日本的ntt线路。平时裸连还好，但是一到晚高峰线路必炸。经常是打开网页一片白，什么都加载不出来，所以也是</description>
+    </item>
+    
+    <item>
+      <title>利用VULTR的API定时备份服务器</title>
+      <link>https://blog.mashiro.nl/posts/technology/%E5%88%A9%E7%94%A8vultr%E7%9A%84api%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Mon, 08 Jun 2020 17:33:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/%E5%88%A9%E7%94%A8vultr%E7%9A%84api%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>今天上VULTR账户检查服务器的一些情况时，无意间发现它是有提供API接口的。 枉我用了它家快一年的服务器，居然现在才发现。。。 快速浏览了一下，发现这个</description>
+    </item>
+    
+    <item>
+      <title>Typecho 不显示 emoji 表情的解决方案</title>
+      <link>https://blog.mashiro.nl/posts/technology/typecho%E4%B8%8D%E6%98%BE%E7%A4%BAemoji%E8%A1%A8%E6%83%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sun, 07 Jun 2020 03:06:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/typecho%E4%B8%8D%E6%98%BE%E7%A4%BAemoji%E8%A1%A8%E6%83%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>其实之前一直没有发现这个问题，因为平时就算插入表情也是用贴图的方式，很少用emoji。但是前两天发布一篇文章后，突然发现文章的内容不见了一半，回到管理</description>
+    </item>
+    
+    <item>
+      <title>如何制作个人博客</title>
+      <link>https://blog.mashiro.nl/posts/technology/%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 04 Jun 2020 01:23:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>本文参考自如何快速搭建个人博客，有删改 购买服务器(空间) 服务器的选择很多，国内有阿里云、腾讯云这些主机商，国外比较知名的就是VULTR、Linode、</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Typecho 不显示 emoji 表情的解决方案 | 再聚樱花庄</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="https://blog.mashiro.nl/css/eureka.min.css">
+<script defer src="https://blog.mashiro.nl/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="这其实是编码的问题">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://blog.mashiro.nl/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Typecho 不显示 emoji 表情的解决方案",
+      "item":"https://blog.mashiro.nl/posts/technology/typecho%E4%B8%8D%E6%98%BE%E7%A4%BAemoji%E8%A1%A8%E6%83%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.mashiro.nl/posts/technology/typecho%E4%B8%8D%E6%98%BE%E7%A4%BAemoji%E8%A1%A8%E6%83%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"
+    },
+    "headline": "Typecho 不显示 emoji 表情的解决方案 | 再聚樱花庄","datePublished": "2020-06-07T03:06:00+00:00",
+    "dateModified": "2020-06-07T03:06:00+00:00",
+    "wordCount":  840 ,
+    "publisher": {
+        "@type": ["计算机技术","二次元"],
+        "name": "Mashiro",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/avatar.jpg"
+        }
+        },
+    "description": "这其实是编码的问题"
+}
+</script><meta property="og:title" content="Typecho 不显示 emoji 表情的解决方案 | 再聚樱花庄" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://blog.mashiro.nl/images/favicon-32x32.jpg">
+
+
+<meta property="og:url" content="https://blog.mashiro.nl/posts/technology/typecho%E4%B8%8D%E6%98%BE%E7%A4%BAemoji%E8%A1%A8%E6%83%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" />
+
+
+
+<meta property="og:description" content="这其实是编码的问题" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="再聚樱花庄" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-06-07T03:06:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2020-06-07T03:06:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">再聚樱花庄</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="https://mashiro.nl/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Typecho 不显示 emoji 表情的解决方案</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-06-07</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>2分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="https://blog.mashiro.nl/categories/%E6%8A%80%E6%9C%AF/" class="hover:text-eureka">技术</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>其实之前一直没有发现这个问题，因为平时就算插入表情也是用贴图的方式，很少用emoji。但是前两天发布一篇文章后，突然发现文章的内容不见了一半，回到管理页面，里面也是只剩下前半截文章，真就凭空消失了呗！😂 <del>(当时快被气死了)</del></p>
+<p>然后看了一下中断的地方，想起后面应该是接了一个emoji表情，初步怀疑是这个原因。后面撰写了一篇带emoji表情的文章进行测试，果真如此。就是一旦你保存了文章，emoji后面的内容都会消失。</p>
+<p>一开始试了很多方法，如嵌个p标签进去；使用转义字符&hellip;&hellip;但通通都失败了。后来上网查找资料，找到了一篇真正靠谱的<a href="https://get233.com/archives/show-emoji-in-typecho.html">解决方案</a>。</p>
+<h2 id="问题原因">问题原因</h2>
+<p>因为之前的数据表用的都是 <code>UTF-8</code> 的编码方式，但在 <code>MySQL</code> 中，<code>UTF-8</code> 最多只支持3个字节，而emoji是4个字节，所以就&hellip;&hellip; 
+但是我想起Wordpress的站点没出过这种问题啊，所以我特意查了一下它的数据表编码方式，发现居然是 <code>utf8mb4</code>。嗯，吹一波Wordpress大法好。</p>
+<h2 id="解决方法">解决方法</h2>
+<h3 id="1更改数据表编码方式">1.更改数据表编码方式</h3>
+<blockquote>
+<p>请记得一定要先备份数据库，虽然我可以保证按我说的做一定不会损坏你的数据，但毕竟数据无价</p>
+</blockquote>
+<p>首先登录到Typecho的数据库</p>
+<pre><code class="language-mysql">mysql -u root -p password #连接数据库命令
+use &lt;typecho数据库名&gt;; #选择你的 Typecho 数据库
+</code></pre>
+<p>然后把下列数据表的编码方式改为 <code>utf8mb4</code></p>
+<pre><code class="language-mysql">alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+alter table typecho_contents convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+alter table typecho_fields convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+alter table typecho_metas convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+alter table typecho_options convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+alter table typecho_relationships convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+alter table typecho_users convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+</code></pre>
+<p>改完后用 <code>show create table &lt;表名&gt;;</code> 命令，查看一下是否修改成功<br>
+<strong>请大胆放心地修改，因为utf8mb4是兼容UTF-8的，不会影响现有数据</strong></p>
+<h3 id="2更改-typecho-配置文件">2.更改 Typecho 配置文件</h3>
+<p>位置就在你Typecho的安装目录里(举例：<code>/home/wwwroot/你的网站根目录/config.inc.php</code>)<br>
+把数据库定义参数中 <code>charset</code> 的值改为 <code>utf8mb4</code></p>
+<pre><code class="language-php">$db-&gt;addServer(array (
+    'host'      =&gt;  localhost,
+    'user'      =&gt;  'me',
+    'password'  =&gt;  'my_password',
+    'charset'   =&gt;  'utf8mb4',        #修改这一行
+    'port'      =&gt;  3306,
+    'database'  =&gt;  '蛤？'
+), Typecho_Db::READ | Typecho_Db::WRITE);
+</code></pre>
+<p>然后保存更改，就可以愉快地玩耍啦！
+最后狗头镇楼🐶 🐶 🐶</p>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://blog.mashiro.nl/posts/technology/%E5%88%A9%E7%94%A8vultr%E7%9A%84api%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="block">利用VULTR的API定时备份服务器</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://blog.mashiro.nl/posts/technology/%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="block">如何制作个人博客</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+  <div id="valine-comments" class="mt-4"></div>
+<script defer src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js" 
+  integrity="sha256-fPqMAsW3FDt/rNyneSJ7HOpZNRs/O2rM016SU08JtCk="  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Valine({
+      el: "#valine-comments",appId:"H4NQ97zh3hCctB9UwiUHnyY1-9Nh9j0Va",appKey:"dhXX2yEVi16Qr9V8ASdXuPNI",
+    })
+  });
+</script>
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; <a href="https://mashiro.nl/">Mashiro</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

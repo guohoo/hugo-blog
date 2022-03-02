@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Docker容器安装软件踩坑及换源 | 再聚樱花庄</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="https://blog.mashiro.nl/css/eureka.min.css">
+<script defer src="https://blog.mashiro.nl/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="记录一下，虽然不是什么技术难题">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://blog.mashiro.nl/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Docker容器安装软件踩坑及换源",
+      "item":"https://blog.mashiro.nl/posts/technology/docker%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%B8%A9%E5%9D%91%E5%8F%8A%E6%8D%A2%E6%BA%90/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.mashiro.nl/posts/technology/docker%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%B8%A9%E5%9D%91%E5%8F%8A%E6%8D%A2%E6%BA%90/"
+    },
+    "headline": "Docker容器安装软件踩坑及换源 | 再聚樱花庄","datePublished": "2020-08-13T08:23:00+00:00",
+    "dateModified": "2020-08-13T08:23:00+00:00",
+    "wordCount":  1239 ,
+    "publisher": {
+        "@type": ["计算机技术","二次元"],
+        "name": "Mashiro",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/avatar.jpg"
+        }
+        },
+    "description": "记录一下，虽然不是什么技术难题"
+}
+</script><meta property="og:title" content="Docker容器安装软件踩坑及换源 | 再聚樱花庄" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://blog.mashiro.nl/images/favicon-32x32.jpg">
+
+
+<meta property="og:url" content="https://blog.mashiro.nl/posts/technology/docker%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%B8%A9%E5%9D%91%E5%8F%8A%E6%8D%A2%E6%BA%90/" />
+
+
+
+<meta property="og:description" content="记录一下，虽然不是什么技术难题" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="再聚樱花庄" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-08-13T08:23:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2020-08-13T08:23:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">再聚樱花庄</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="https://mashiro.nl/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Docker容器安装软件踩坑及换源</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-08-13</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="https://blog.mashiro.nl/categories/%E6%8A%80%E6%9C%AF/" class="hover:text-eureka">技术</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>换源网上一搜多的是教程，但是这些教程都没讲清楚，一不小心可能就掉坑里。<br>
+没错，说的就是你，CSDN垃圾回收站。</p>
+<p>因为最近重装了一次电脑，而 <code>Docker Desktop</code> 默认装在C盘，所以重装时也一并清掉了，只能重新安装。另外看到Ubuntu挺多人用的，于是没继续用之前的CentOS镜像，打算换换口味。但是在安装软件时却遇到了一些问题，特此记录一下。<del>真就把Docker当成Linux用呗</del></p>
+<p>打开容器，本来打算修改一下文件，结果给我返回来一个 <code>nano:command not found</code>。嗯？What the fu**<br>
+Docker你的官方镜像也太精简了吧！真就一个白板系统。没办法，只能自己装个vim。</p>
+<h2 id="遇到的问题">遇到的问题</h2>
+<h3 id="坑1-e-unable-to-locate-package-vim">坑1 E: Unable to locate package vim</h3>
+<p>这个简单，<code>apt-get update</code> 同步一下 <code>/etc/apt/sources.list</code> 和 <code>/etc/apt/sources.list.d</code> 中列出的源的索引即可。正常情况下应该就可以安装软件了，除了速度有亿点点慢。<del>默认用官方的源，能快就见鬼了</del><br>
+不过因为我开了全局代理，所以速度还可以，直到又出来一个奇奇怪怪的错误&hellip;&hellip;</p>
+<h3 id="坑2-failed-to-fetch-connection-failed-ip-9118988149-80">坑2 Failed to fetch Connection failed [IP: 91.189.88.149 80]</h3>
+<p>一开始还以为是梯子掉线了，结果不然。Ping了一下那个IP也可以Ping通，不应该啊！于是直接用浏览器打开官方的仓库，找到没下载成功的组件，发现也可以正常下载，真的是莫名奇妙。<br>
+不过没下载成功的组件不多，所以后面我直接手动下载下来，拷进容器里重新安装。但是为了避免以后再有这样的麻烦，所以决定对apt进行换源。</p>
+<h2 id="更改国内镜像源">更改国内镜像源</h2>
+<p>国内有很多这样的镜像站，像阿里镜像，网易镜像，还有清华镜像等等，选一个访问速度快的即可。看了一下网上的换源教程，都是直接扔给你一段配置文件，也不说清楚注意的事项，极其不负责任。要是直接用了他们的配置，可能没加上速，反而还有一堆的报错。</p>
+<h3 id="1准备工作">1.准备工作</h3>
+<p>首先要明确你当前Linux的版本等信息，以及确保自己的Codename在镜像站上面找得到。像我的就是 <code>Ubuntu</code>，<code>Codename=focal</code>。( Codename可以用 <code>lsb_release -a</code> 查看，但Docker的白板镜像是没有 <code>lsb_release</code> 的，所以换成 <code>cat /etc/os-release</code> )以阿里的镜像站为例，到 <a href="http://mirrors.aliyun.com/ubuntu/dists/">http://mirrors.aliyun.com/ubuntu/dists/</a> 上面看一下有没有自己的Codename，没有就换其他镜像站看看。接着才是修改 <code>sources.list</code> 文件。</p>
+<h3 id="2修改文件">2.修改文件</h3>
+<p>修改前建议先备份一下：<code>cp /etc/apt/sources.list /etc/apt/sources.list.bak</code><br>
+然后再进入 <code>/etc/apt</code> 目录，打开 <code>sources.list</code> 文件，改成如下的形式：</p>
+<pre><code>deb http://mirrors.aliyun.com/ubuntu/ $Codename main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-backports main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-proposed main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-security main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-updates main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-backports main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-proposed main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-security main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-updates main multiverse restricted universe
+</code></pre>
+<p><strong>PS</strong>：$Codename改成你自己的Codename即可，另外如果不需要源码编译安装的，可以把deb-src开头的几行注释掉</p>
+<h3 id="3更新apt">3.更新apt</h3>
+<p>最后再运行一次 <code>apt-get update</code>，没问题的话就算配置完成了。</p>
+<h2 id="一键脚本">一键脚本</h2>
+<p>为了照顾懒人，我写了个bash脚本，大家也可以参考一下</p>
+<pre><code class="language-bash">#!/bin/bash
+cp /etc/apt/sources.list /etc/apt/sources.list.bak &amp;&amp; \
+Codename=$((lsb_release -a)|awk '{print $2}'|tail -n 1) &amp;&amp; \  #没有lsb_release的话把这行改成Codename=&quot;XXX&quot;这种形式
+echo &quot;\
+deb http://mirrors.aliyun.com/ubuntu/ $Codename main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-backports main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-proposed main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-security main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ $Codename-updates main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-backports main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-proposed main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-security main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ $Codename-updates main multiverse restricted universe&quot;&gt;sources.list &amp;&amp; \
+sudo apt-get update
+</code></pre>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://blog.mashiro.nl/posts/technology/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/" class="block">服务器基础安全配置</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://blog.mashiro.nl/posts/daliy/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/" class="block">创建一个属于自己的域名邮箱</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+  <div id="valine-comments" class="mt-4"></div>
+<script defer src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js" 
+  integrity="sha256-fPqMAsW3FDt/rNyneSJ7HOpZNRs/O2rM016SU08JtCk="  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Valine({
+      el: "#valine-comments",appId:"H4NQ97zh3hCctB9UwiUHnyY1-9Nh9j0Va",appKey:"dhXX2yEVi16Qr9V8ASdXuPNI",
+    })
+  });
+</script>
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; <a href="https://mashiro.nl/">Mashiro</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

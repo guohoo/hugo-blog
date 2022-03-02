@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang='zh' dir='ltr' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>自定义Cloudflare节点 | 再聚樱花庄</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.0" />
+<link rel="stylesheet" href="https://blog.mashiro.nl/css/eureka.min.css">
+<script defer src="https://blog.mashiro.nl/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="如果不是备案的&#34;神奇&#34;规则，才不会用Cloudflare来加速">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://blog.mashiro.nl/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"自定义Cloudflare节点",
+      "item":"https://blog.mashiro.nl/posts/technology/%E8%87%AA%E5%AE%9A%E4%B9%89cloudflare%E8%8A%82%E7%82%B9/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.mashiro.nl/posts/technology/%E8%87%AA%E5%AE%9A%E4%B9%89cloudflare%E8%8A%82%E7%82%B9/"
+    },
+    "headline": "自定义Cloudflare节点 | 再聚樱花庄","datePublished": "2020-06-16T22:33:00+00:00",
+    "dateModified": "2020-06-16T22:33:00+00:00",
+    "wordCount":  1517 ,
+    "publisher": {
+        "@type": ["计算机技术","二次元"],
+        "name": "Mashiro",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/avatar.jpg"
+        }
+        },
+    "description": "如果不是备案的\u0022神奇\u0022规则，才不会用Cloudflare来加速"
+}
+</script><meta property="og:title" content="自定义Cloudflare节点 | 再聚樱花庄" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://blog.mashiro.nl/images/favicon-32x32.jpg">
+
+
+<meta property="og:url" content="https://blog.mashiro.nl/posts/technology/%E8%87%AA%E5%AE%9A%E4%B9%89cloudflare%E8%8A%82%E7%82%B9/" />
+
+
+
+<meta property="og:description" content="如果不是备案的&#34;神奇&#34;规则，才不会用Cloudflare来加速" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="再聚樱花庄" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-06-16T22:33:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2020-06-16T22:33:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 ps-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">再聚樱花庄</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="https://mashiro.nl/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="grow pt-16">
+    <div class="ps-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">自定义Cloudflare节点</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="me-6 my-2">
+        <i class="fas fa-calendar me-1"></i>
+        <span>2020-06-16</span>
+    </div>
+    <div class="me-6 my-2">
+        <i class="fas fa-clock me-1"></i>
+        <span>4分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="me-6 my-2">
+        <i class="fas fa-folder me-1"></i>
+        
+        <a href="https://blog.mashiro.nl/categories/%E6%8A%80%E6%9C%AF/" class="hover:text-eureka">技术</a>
+        
+    </div>
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <p>因为现在的博客是部署在VULTR的日本机房，走日本的ntt线路。平时裸连还好，但是一到晚高峰线路必炸。经常是打开网页一片白，什么都加载不出来，所以也是没办法，被迫用CDN来加速站点。</p>
+<p>但是这里有个很坑的事情，要想接入国内的CDN，域名必须是备案的；域名要备案，又必须解析到国内的服务器&hellip;&hellip;
+那要是把站点搬回国内，我还要CDN来干嘛呢？→_→</p>
+<p>辛辛苦苦把站点部署在国外主机，是不可能再用回国内的小水管啦！所以想出几个可行的方案</p>
+<ol>
+<li>把静态资源部署在国内的服务器，接CDN加速<br>
+一票否决，因为没钱再买服务器，而且这样也做不到全站CDN</li>
+<li>把域名绑在国内的便宜主机上，CDN回源指向原站<br>
+还是否决，原因同上</li>
+<li>接入国外的CDN<br>
+思来想去还是决定用这个方案，穷建站只能这样了(小声逼逼~)</li>
+</ol>
+<p>这里我选择的是Cloudflare，国外知名CDN服务提供商，还有免费的套餐。<br>
+但是免费版是不支持CNAME接入的，只能任由别人分配节点。海外加速通常没太大问题，不过用来给国内用户加速就很尴尬了。众所周知，Cloudflare对于国内就是云减速，因为它分配的节点对国内用户真的不太友好。鉴于这种情况，我们就需要指定节点来部署CDN加速。通过CNAME接入的方法有两种，一是升级企业版套餐，二是加入<code>Cloudflare Partner</code>。此处用的是第二种方法。</p>
+<h2 id="接入cloudflare-partner">接入Cloudflare Partner</h2>
+<p>选择一个靠谱的 <code>Cloudflare Partner</code>，加入后在别人的面板进行解析即可。(Partner很多，此处不列出)
+要是你不放心，可以自己去申请一个<a href="https://www.cloudflare.com/partners/">Partner资格</a>，然后搭建面板，不过现在不好申请了。
+接入和解析的教程上网一搜就有，这里不再赘述，就讲几个重要的点</p>
+<ol>
+<li>和在域名解析处填的记录一样，哪个域名要走CDN，就填哪个域名相应的记录。
+<br>比如你在域名解析处有记录值为@，指向服务器IP的A记录，那么在面板就这样填写
+<p><ul>
+<li>记录值：@</li>
+<li>类型：A</li>
+<li>回源地址：服务器IP或任意一个解析到服务器的域名</li>
+</ul></p>
+</li>
+<li>添加完成后系统会给出相应的CNAME记录值，把这条CNAME记录在域名解析处加上即可</li>
+</ol>
+<p><strong>PS</strong>：要先停掉域名解析原来的A记录，再加上CNAME记录，因为两者会冲突。</p>
+<p><a href="https://vircloud.net/operations/cf-cname.html">详细教程</a></p>
+<h2 id="线路优化">线路优化</h2>
+<p>这是最为重要的一步，因为我们要指定CDN节点来加速国内访问速度，避免Cloudflare的自动分配。
+到域名解析处添加A记录解析，线路类型自行设置，记录值填你想要指定Cloudflare节点的IP。
+下面给出网上搜集的一些节点，如果你知道其他好用的节点也欢迎在评论区补充</p>
+<ul>
+<li>移动
+香港节点就OK了，例如<code>1.0.0.0-254</code>，<code>1.1.1.0-254</code>或者<code>172.64.32.*</code></li>
+<li>联通
+试了很多节点，没有很满意的，都在160ms~190ms这个区间，目前用的是圣何塞<code>104.16.160.*</code></li>
+<li>电信
+也没有推荐的，和联通一样走圣何塞<code>104.23.240.0-104.23.243.254</code></li>
+<li>与百度云合作的节点</li>
+</ul>
+<pre><code>162.159.211.4-103        103.21.244.0/22         162.159.208.4-162.159.208.103
+103.22.200.0/22          103.31.4.0/22           162.159.209.4-162.159.209.103
+104.16.0.0/12            108.162.192.0/18        162.159.210.4-162.159.210.103
+131.0.72.0/22            141.101.64.0/18         162.159.211.4-162.159.211.103
+162.158.0.0/15           172.64.0.0/13
+173.245.48.0/20          188.114.96.0/20
+190.93.240.0/20          197.234.240.0/22
+198.41.128.0/17          141.101.115.1-254
+</code></pre>
+<p>可以在<a href="https://www.ipip.net/">IPIP</a>查看各地Ping值，还可以进行路由跟踪。</p>
+<h2 id="题外话">题外话</h2>
+<p>其实我个人是不介意备案的，但是目前的备案制度实在令人窒息，它不仅把域名和人绑在一起，连带主机商也要一块掺和进来。一旦出事的话，政府不仅要找到网站的所有人，还要找到网站的接入商，方便第一时间把你网线给拔了。当然这不是说网站应该不被监管，但是绑定国内主机这一条规则真的太僵硬了，让想备案的人都望而却步。</p>
+<p>最后引用阮一峰老师的一段话作结：</p>
+<blockquote>
+<p>几十年以后，或者几个世纪以后，回顾这段历史的时候，大家会觉得网站备案、GFW、绿坝软件、诸如此类的事情，都是好事，因为它们让许多中国青年认清了这个社会的本质，不再对旧制度抱有幻想，开始期盼新制度的到来，从而大大加快了社会变革的速度。</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://blog.mashiro.nl/posts/daliy/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/" class="block">创建一个属于自己的域名邮箱</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://blog.mashiro.nl/posts/technology/%E5%88%A9%E7%94%A8vultr%E7%9A%84api%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="block">利用VULTR的API定时备份服务器</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+  <div id="valine-comments" class="mt-4"></div>
+<script defer src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js" 
+  integrity="sha256-fPqMAsW3FDt/rNyneSJ7HOpZNRs/O2rM016SU08JtCk="  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Valine({
+      el: "#valine-comments",appId:"H4NQ97zh3hCctB9UwiUHnyY1-9Nh9j0Va",appKey:"dhXX2yEVi16Qr9V8ASdXuPNI",
+    })
+  });
+</script>
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="ps-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; <a href="https://mashiro.nl/">Mashiro</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

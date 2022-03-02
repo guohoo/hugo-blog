@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 再聚樱花庄</title>
+    <link>https://blog.mashiro.nl/categories/</link>
+    <description>Recent content in Categories on 再聚樱花庄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://mashiro.nl/&#34;&gt;Mashiro&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 06 Nov 2021 21:31:08 +0000</lastBuildDate><atom:link href="https://blog.mashiro.nl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>技术</title>
+      <link>https://blog.mashiro.nl/categories/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sat, 06 Nov 2021 21:31:08 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>生活</title>
+      <link>https://blog.mashiro.nl/categories/%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Sat, 16 Jan 2021 23:00:07 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/categories/%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
