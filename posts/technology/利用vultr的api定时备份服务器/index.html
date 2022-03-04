@@ -294,16 +294,32 @@
 
 
 
-  <div id="valine-comments" class="mt-4"></div>
-<script defer src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js" 
-  integrity="sha256-fPqMAsW3FDt/rNyneSJ7HOpZNRs/O2rM016SU08JtCk="  crossorigin></script>
+  <div id="waline-comments" class="mt-4"></div>
+<script defer src="https://cdn.jsdelivr.net/npm/@waline/client@1.5.4/dist/Waline.min.js" 
+  integrity="sha256-HWUTNlNWNR5nk1KDDpFP13JH1Jr/uIeIvWSBHI1OZnM="  crossorigin></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    new Valine({
-      el: "#valine-comments",appId:"H4NQ97zh3hCctB9UwiUHnyY1-9Nh9j0Va",appKey:"dhXX2yEVi16Qr9V8ASdXuPNI",
+    new Waline({
+      el: "#waline-comments",
+      requiredFields: [ 'nick','mail' ],
+      pageSize: 10,
+      guest_info: "nick",
+      comment_count: true,
+      emoji: [
+            'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/alus',
+            'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/bilibili',
+            'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/quyin',
+      ],avatar:"mp",dark:"auto",lang:"zh-CN",placeholder:"喵帕斯～o(=•ェ•=)m",serverURL:"https://waline-topaz-psi.vercel.app",visitor:"false",
     })
   });
 </script>
+<style>
+  #waline-comments textarea {
+      box-sizing: border-box;
+      background: url("https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/paimon-eat.webp") 100% 100% no-repeat;
+      background-size: 90px 90px;
+  }
+</style>
 
     </div>
     
@@ -323,7 +339,7 @@
   </main>
   <footer class="ps-scrollbar">
     <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text">&copy; <a href="https://mashiro.nl/">Mashiro</a>
+    <p class="text-sm text-tertiary-text">&copy; <script>document.write(new Date().getFullYear())</script> <a href="https://mashiro.nl/">Mashiro</a>
  &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
 </div></div>
   </footer>

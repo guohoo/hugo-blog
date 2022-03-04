@@ -6,7 +6,7 @@
     <description>Recent content in Tags on 再聚樱花庄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://mashiro.nl/&#34;&gt;Mashiro&lt;/a&gt;
+    <copyright>&amp;copy; &lt;script&gt;document.write(new Date().getFullYear())&lt;/script&gt; &lt;a href=&#34;https://mashiro.nl/&#34;&gt;Mashiro&lt;/a&gt;
 </copyright><atom:link href="https://blog.mashiro.nl/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
