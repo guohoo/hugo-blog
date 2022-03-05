@@ -348,7 +348,6 @@
     new Waline({
       el: "#waline-comments",
       requiredFields: [ 'nick','mail' ],
-      dark: "html[class=\"fontawesome-i2svg-active fontawesome-i2svg-complete dark\"]",
       pageSize: 10,
       guest_info: "nick",
       comment_count: true,
@@ -362,7 +361,7 @@
 </script>
 <style>
    
-  :root[class="fontawesome-i2svg-active fontawesome-i2svg-complete dark"] {
+  .dark.fontawesome-i2svg-active.fontawesome-i2svg-complete {
        --waline-theme-color: #acc6e0;
        --waline-white: #34495e;  
        --waline-active-color: #8ab1d8;
@@ -374,6 +373,7 @@
        --waline-text-color: rgba(255, 255, 255, 0.7);
        --waline-bgcolor: #2C2C2E;
        --waline-bgcolor-light: #66696b; 
+       --waline-border-color: #2C2C2E;
        --waline-disable-bgcolor: #444;
        --waline-disable-color: #272727;
 
