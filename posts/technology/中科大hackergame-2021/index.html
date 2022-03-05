@@ -384,7 +384,7 @@ take care of it.</li>
 <p>提示了 flag 是 admin 的邮箱。先 F12 打开控制台，查找 graphql，然后发现页面向 http://202.38.93.111:15001/graphql 发送了一次 POST 请求，十分可疑。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/image/2021-11/gql-2.webp" alt="post"></p>
 <p>点击查看详情，发现请求参数如下</p>
-<pre><code class="language-request">{ 
+<pre><code>{ 
   notes(userId: 2)
   { 
     id
@@ -436,7 +436,7 @@ take care of it.</li>
 </ul>
 <p>总的来说，是由于 GraphQL 存在内省机制，如果不加以处理，则可能会泄露系统中所有的可用的查询，以及查询支持的字段等信息。</p>
 <p>这题估计也是要利用类似的漏洞，我们先通过<code>__schema</code>查询所有可用对象试试</p>
-<pre><code class="language-request">{
+<pre><code>{
     __schema {
         types {
             name
@@ -497,7 +497,7 @@ take care of it.</li>
 }
 </code></pre>
 <p>其中比较敏感的是<code>GUser</code>这个对象，用<code>__type</code>查询<code>GUser</code>的所有字段：</p>
-<pre><code class="language-request">{
+<pre><code>{
   __type(name: &quot;GUser&quot;) {
     name
     fields {
@@ -543,7 +543,7 @@ take care of it.</li>
 }
 </code></pre>
 <p>Great！里面有个<code>privateEmail</code>，flag 应该就在里面。然后看一下<code>Query</code>里面定义的可用查询</p>
-<pre><code class="language-request">{
+<pre><code>{
   __schema {
     queryType {
       fields {
@@ -579,7 +579,7 @@ take care of it.</li>
 }
 </code></pre>
 <p>那么最后猜测 admin 的 id 是 1，构造请求：</p>
-<pre><code class="language-request">{
+<pre><code>{
     user(id:1) { 
         privateEmail 
     } 
@@ -669,6 +669,7 @@ RFC1700 定义的保留地址 240.0.0.0/4<br>
     new Waline({
       el: "#waline-comments",
       requiredFields: [ 'nick','mail' ],
+      dark: "html[class=\"fontawesome-i2svg-active fontawesome-i2svg-complete dark\"]",
       pageSize: 10,
       guest_info: "nick",
       comment_count: true,
@@ -676,11 +677,35 @@ RFC1700 定义的保留地址 240.0.0.0/4<br>
             'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/alus',
             'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/bilibili',
             'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/quyin',
-      ],avatar:"mp",dark:"auto",lang:"zh-CN",placeholder:"喵帕斯～o(=•ェ•=)m",serverURL:"https://waline-topaz-psi.vercel.app",visitor:"false",
+      ],avatar:"mp",lang:"zh-CN",placeholder:"喵帕斯～o(=•ェ•=)m",serverURL:"https://waline-topaz-psi.vercel.app",visitor:"false",
     })
   });
 </script>
 <style>
+   
+  :root[class="fontawesome-i2svg-active fontawesome-i2svg-complete dark"] {
+       --waline-theme-color: #acc6e0;
+       --waline-white: #34495e;  
+       --waline-active-color: #8ab1d8;
+       --waline-light-grey: #666;
+       --waline-dark-grey: #acc6e0;  
+       --waline-badge-color: #acc6e0;
+
+        
+       --waline-text-color: rgba(255, 255, 255, 0.7);
+       --waline-bgcolor: #2C2C2E;
+       --waline-bgcolor-light: #66696b; 
+       --waline-disable-bgcolor: #444;
+       --waline-disable-color: #272727;
+
+        
+       --waline-bq-color:  #9B9C9C;  
+
+        
+       --waline-info-bgcolor: #acc6e0;
+       --waline-info-color: #9B9C9C;
+  }
+
   #waline-comments textarea {
       box-sizing: border-box;
       background: url("https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/paimon-eat.webp") 100% 100% no-repeat;

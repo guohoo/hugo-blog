@@ -239,7 +239,7 @@
 
         <div class="content">
             <blockquote>
-<p><strong>写在前面</strong>
+<p><strong>写在前面</strong><br>
 用这种邮箱有一个弊端，就是发出的邮件容易被判定为垃圾邮件(此处特别&quot;表扬&quot;QQ邮箱)，所以发一些重要邮件时不建议使用这种邮箱，否则出现不良后果博主可负不起这个责任啊😰</p>
 </blockquote>
 <p>看到别人网站的送信邮箱都是用域名作为邮箱后缀，害我也馋了，于是决定自己也申请一个。</p>
@@ -301,6 +301,7 @@ IMAP：imap.ym.163.com 默认端口为：143 （如勾选ssl安全链接，端�
     new Waline({
       el: "#waline-comments",
       requiredFields: [ 'nick','mail' ],
+      dark: "html[class=\"fontawesome-i2svg-active fontawesome-i2svg-complete dark\"]",
       pageSize: 10,
       guest_info: "nick",
       comment_count: true,
@@ -308,11 +309,35 @@ IMAP：imap.ym.163.com 默认端口为：143 （如勾选ssl安全链接，端�
             'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/alus',
             'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/bilibili',
             'https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/stickers/quyin',
-      ],avatar:"mp",dark:"auto",lang:"zh-CN",placeholder:"喵帕斯～o(=•ェ•=)m",serverURL:"https://waline-topaz-psi.vercel.app",visitor:"false",
+      ],avatar:"mp",lang:"zh-CN",placeholder:"喵帕斯～o(=•ェ•=)m",serverURL:"https://waline-topaz-psi.vercel.app",visitor:"false",
     })
   });
 </script>
 <style>
+   
+  :root[class="fontawesome-i2svg-active fontawesome-i2svg-complete dark"] {
+       --waline-theme-color: #acc6e0;
+       --waline-white: #34495e;  
+       --waline-active-color: #8ab1d8;
+       --waline-light-grey: #666;
+       --waline-dark-grey: #acc6e0;  
+       --waline-badge-color: #acc6e0;
+
+        
+       --waline-text-color: rgba(255, 255, 255, 0.7);
+       --waline-bgcolor: #2C2C2E;
+       --waline-bgcolor-light: #66696b; 
+       --waline-disable-bgcolor: #444;
+       --waline-disable-color: #272727;
+
+        
+       --waline-bq-color:  #9B9C9C;  
+
+        
+       --waline-info-bgcolor: #acc6e0;
+       --waline-info-color: #9B9C9C;
+  }
+
   #waline-comments textarea {
       box-sizing: border-box;
       background: url("https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/paimon-eat.webp") 100% 100% no-repeat;
