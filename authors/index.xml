@@ -8,5 +8,14 @@
     <language>zh</language>
     <copyright>&amp;copy; &lt;script&gt;document.write(new Date().getFullYear())&lt;/script&gt; &lt;a href=&#34;https://mashiro.nl/&#34;&gt;Mashiro&lt;/a&gt;
 </copyright><atom:link href="https://blog.mashiro.nl/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mashiro</title>
+      <link>https://blog.mashiro.nl/authors/mashiro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/authors/mashiro/</guid>
+      <description>关于我 中二病患者，喜欢折腾，但经常填不上坑……目前在自学计算机相关的知识，会点Python和Linux More about me&amp;hellip; 关于本站 主要分享计算机和ACG相关的内容，</description>
+    </item>
+    
   </channel>
 </rss>
