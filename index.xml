@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; &lt;script&gt;document.write(new Date().getFullYear())&lt;/script&gt; &lt;a href=&#34;https://mashiro.nl/&#34;&gt;Mashiro&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Fri, 11 Mar 2022 13:31:08 +0000</lastBuildDate><atom:link href="https://blog.mashiro.nl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jun 2022 16:30:45 +0000</lastBuildDate><atom:link href="https://blog.mashiro.nl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>迁移Windows分区</title>
+      <link>https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/</link>
+      <pubDate>Sat, 04 Jun 2022 16:30:45 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/</guid>
+      <description>目前在使用 Arch + Windows 双系统进行工作，但由于是先安装的 Windows，所以默认分配的 efi 分区只有 100MB，而 /boot 这个目录我也挂载到这个分区上，故内核更新时经常</description>
+    </item>
+    
     <item>
       <title>使用Git rebase删除commit记录</title>
       <link>https://blog.mashiro.nl/posts/technology/%E4%BD%BF%E7%94%A8git-rebase%E5%88%A0%E9%99%A4commit%E8%AE%B0%E5%BD%95/</link>
@@ -73,12 +82,30 @@
     </item>
     
     <item>
+      <title>「玩卡系列」天依小柠檬联名借记IC卡</title>
+      <link>https://blog.mashiro.nl/posts/daliy/%E7%8E%A9%E5%8D%A1%E7%B3%BB%E5%88%97%E5%A4%A9%E4%BE%9D%E5%B0%8F%E6%9F%A0%E6%AA%AC%E8%81%94%E5%90%8D%E5%80%9F%E8%AE%B0ic%E5%8D%A1/</link>
+      <pubDate>Mon, 22 Jun 2020 19:26:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/daliy/%E7%8E%A9%E5%8D%A1%E7%B3%BB%E5%88%97%E5%A4%A9%E4%BE%9D%E5%B0%8F%E6%9F%A0%E6%AA%AC%E8%81%94%E5%90%8D%E5%80%9F%E8%AE%B0ic%E5%8D%A1/</guid>
+      <description>卡是3月份就申请了，现在写出来是服务一下还没有申请的小伙伴。(才不是炒冷饭呢 ~) 因为隔了挺长的一段时间，所以我所说的申请方法可能已经失效，需要小伙伴们自</description>
+    </item>
+    
+    <item>
       <title>创建一个属于自己的域名邮箱</title>
       <link>https://blog.mashiro.nl/posts/daliy/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/</link>
       <pubDate>Sun, 21 Jun 2020 00:17:00 +0000</pubDate>
       
       <guid>https://blog.mashiro.nl/posts/daliy/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/</guid>
       <description>写在前面 用这种邮箱有一个弊端，就是发出的邮件容易被判定为垃圾邮件(此处特别&amp;quot;表扬&amp;quot;QQ邮箱)，所以发一些重要邮件时不建议使用这种邮</description>
+    </item>
+    
+    <item>
+      <title>「玩卡系列」快来领取你的2233花嫁卡</title>
+      <link>https://blog.mashiro.nl/posts/daliy/%E7%8E%A9%E5%8D%A1%E7%B3%BB%E5%88%97%E5%BF%AB%E6%9D%A5%E9%A2%86%E5%8F%96%E4%BD%A0%E7%9A%842233%E8%8A%B1%E5%AB%81%E5%8D%A1/</link>
+      <pubDate>Thu, 18 Jun 2020 02:20:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/daliy/%E7%8E%A9%E5%8D%A1%E7%B3%BB%E5%88%97%E5%BF%AB%E6%9D%A5%E9%A2%86%E5%8F%96%E4%BD%A0%E7%9A%842233%E8%8A%B1%E5%AB%81%E5%8D%A1/</guid>
+      <description>这张卡是在B站的广告看见的，害，实在是太好看了，没忍住就冲了一张 🙈 而且不仅是因为好看，还有一个更为重要的原因促使我去办卡， 那就是这张卡可以 白 嫖 B 站 大 会</description>
     </item>
     
     <item>
@@ -109,12 +136,30 @@
     </item>
     
     <item>
+      <title>香风智乃景品开箱</title>
+      <link>https://blog.mashiro.nl/posts/acg/%E9%A6%99%E9%A3%8E%E6%99%BA%E4%B9%83%E6%99%AF%E5%93%81%E5%BC%80%E7%AE%B1/</link>
+      <pubDate>Sat, 06 Jun 2020 17:28:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/acg/%E9%A6%99%E9%A3%8E%E6%99%BA%E4%B9%83%E6%99%AF%E5%93%81%E5%BC%80%E7%AE%B1/</guid>
+      <description>入坑前其实很不理解那些&amp;quot;倾家荡产&amp;quot;去买手办的人，但是后来，真香！ 其实这可以理解成中二死肥宅的精神寄托，纸片人老婆已经不能满足他们了</description>
+    </item>
+    
+    <item>
       <title>如何制作个人博客</title>
       <link>https://blog.mashiro.nl/posts/technology/%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Thu, 04 Jun 2020 01:23:00 +0000</pubDate>
       
       <guid>https://blog.mashiro.nl/posts/technology/%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>本文参考自如何快速搭建个人博客，有删改 购买服务器(空间) 服务器的选择很多，国内有阿里云、腾讯云这些主机商，国外比较知名的就是VULTR、Linode、</description>
+    </item>
+    
+    <item>
+      <title>新版Edge上手体验</title>
+      <link>https://blog.mashiro.nl/posts/daliy/%E6%96%B0%E7%89%88edge%E4%B8%8A%E6%89%8B%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Fri, 22 May 2020 16:39:00 +0000</pubDate>
+      
+      <guid>https://blog.mashiro.nl/posts/daliy/%E6%96%B0%E7%89%88edge%E4%B8%8A%E6%89%8B%E4%BD%93%E9%AA%8C/</guid>
+      <description>其实新版早在去年的年底就上架了微软官网，不过是Beta版本。 现在正式版也已经出了，在微软官网就可以下载。 地址：https://www.microsof</description>
     </item>
     
   </channel>

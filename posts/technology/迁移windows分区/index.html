@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>Code Runner快速更改Python解释器路径 | 再聚樱花庄</title>
+<title>迁移Windows分区 | 再聚樱花庄</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="https://blog.mashiro.nl/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_180x180_fill_q75_box_center.jpg">
 
 <meta name="description"
-  content="配合Python插件快速更改成需要的版本">
+  content="使用dd命令拷贝整个分区">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"https://blog.mashiro.nl/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Code Runner快速更改Python解释器路径",
-      "item":"https://blog.mashiro.nl/posts/technology/code-runner%E5%BF%AB%E9%80%9F%E6%9B%B4%E6%94%B9python%E8%A7%A3%E9%87%8A%E5%99%A8%E8%B7%AF%E5%BE%84/"}]
+      "name":"迁移Windows分区",
+      "item":"https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/"}]
 }
 </script>
 
@@ -83,11 +83,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://blog.mashiro.nl/posts/technology/code-runner%E5%BF%AB%E9%80%9F%E6%9B%B4%E6%94%B9python%E8%A7%A3%E9%87%8A%E5%99%A8%E8%B7%AF%E5%BE%84/"
+        "@id": "https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/"
     },
-    "headline": "Code Runner快速更改Python解释器路径 | 再聚樱花庄","datePublished": "2021-08-02T16:30:45+00:00",
-    "dateModified": "2021-08-02T16:30:45+00:00",
-    "wordCount":  459 ,
+    "headline": "迁移Windows分区 | 再聚樱花庄","datePublished": "2022-06-04T16:30:45+00:00",
+    "dateModified": "2022-06-04T16:30:45+00:00",
+    "wordCount":  1599 ,
     "publisher": {
         "@type": ["计算机技术","二次元"],
         "name": "Mashiro",
@@ -96,20 +96,20 @@
             "url": "https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/avatar.jpg"
         }
         },
-    "description": "配合Python插件快速更改成需要的版本"
+    "description": "使用dd命令拷贝整个分区"
 }
-</script><meta property="og:title" content="Code Runner快速更改Python解释器路径 | 再聚樱花庄" />
+</script><meta property="og:title" content="迁移Windows分区 | 再聚樱花庄" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://blog.mashiro.nl/images/favicon-32x32.jpg">
 
 
-<meta property="og:url" content="https://blog.mashiro.nl/posts/technology/code-runner%E5%BF%AB%E9%80%9F%E6%9B%B4%E6%94%B9python%E8%A7%A3%E9%87%8A%E5%99%A8%E8%B7%AF%E5%BE%84/" />
+<meta property="og:url" content="https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/" />
 
 
 
-<meta property="og:description" content="配合Python插件快速更改成需要的版本" />
+<meta property="og:description" content="使用dd命令拷贝整个分区" />
 
 
 
@@ -125,10 +125,10 @@
 
 
 
-<meta property="article:published_time" content="2021-08-02T16:30:45&#43;00:00" />
+<meta property="article:published_time" content="2022-06-04T16:30:45&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2021-08-02T16:30:45&#43;00:00" />
+<meta property="article:modified_time" content="2022-06-04T16:30:45&#43;00:00" />
 
 
 
@@ -211,15 +211,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">Code Runner快速更改Python解释器路径</h1>
+        <h1 class="font-bold text-3xl text-primary-text">迁移Windows分区</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2021-08-02</span>
+        <span>2022-06-04</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>4分钟阅读时长</span>
     </div>
     
     
@@ -238,24 +238,144 @@
         
 
         <div class="content">
-            <h2 id="前言">前言</h2>
-<p>目前主要使用 VS Code + WSL2 进行开发，经常需要更换 Python 运行环境，但是 Code Runner 插件默认会使用 <code>python -u</code> 去执行文件，而无法和 Python 插件进行配合，所以要在配置文件中反复更改解释器路径。另外如果使用默认配置，在 WSL2 中会无法运行文件（Linux 要用 <code>python3 -u</code>，而 <code>python -u</code> 默认使用 python2 去运行），所以要把 Code Runner 运行配置更改成 <code>python3 -u</code>，并在 Windows 多配置一条 python3.exe 软链接，指向所需的解释器才能正常运行。（不建议直接将 python.exe 改名成 python3.exe，实测这样做 pip 会出问题）<br>
-显然这不是一个 Good idea，后来终于在 stackoverflow 找到了一个比较好的办法</p>
-<h2 id="安装-python-插件">安装 Python 插件</h2>
-<p><del>不会吧，不会吧，不会有人用 VS Code 不装插件的吧</del></p>
-<h2 id="更改-code-runner-的设置">更改 Code Runner 的设置</h2>
-<p>首先找到拓展，点击 Code Runner 的齿轮，选择拓展设置。<br>
-打开后右上角有一个 <strong>打开设置(json)</strong> 的按钮，点进去切换到 json 格式<br>
-然后定位到 <code>&quot;code-runner.executorMap&quot;</code>，修改成如下配置</p>
-<pre><code class="language-json">&quot;code-runner.executorMap&quot;: {
-        &quot;python&quot;: &quot;$pythonPath -u $fullFileName&quot;
-    },
+            <p>目前在使用 Arch + Windows 双系统进行工作，但由于是先安装的 Windows，所以默认分配的 efi 分区只有 100MB，而 <code>/boot</code> 这个目录我也挂载到这个分区上，故内核更新时经常空间不足，所以需要对 efi 进行扩容。不过 efi、保留分区以及 Windows 的基本数据分区是紧密相连的，所以需要对后面的分区向右移动才能进行扩容。</p>
+<h2 id="准备工作">准备工作</h2>
+<ol>
+<li>
+<p>首先需要对分区进行一个压缩，此处主要是数据分区。先在 Windows 里面用磁盘工具，把原来分区的尾部裁出来（右键此电脑 &gt; 管理 &gt; 磁盘管理 &gt; 右键磁盘 &gt; 压缩卷），大小选择为最大。</p>
+</li>
+<li>
+<p>可以准备一个 Linux 的 Live CD，当然直接用磁盘上的 Linux 也可以，不过操作前记得卸载相应的分区（下面的操作基于 Live CD 环境）。</p>
+</li>
+</ol>
+<h2 id="使用-dd-拷贝分区">使用 dd 拷贝分区</h2>
+<p>dd 是一个简单粗暴的工具，不基于文件系统拷贝文件，而是直接复制硬盘上的 0 和 1，可以把分区整个拷贝下来。</p>
+<pre><code>fdisk -l	# 查看硬盘上的分区信息
+mount /dev/nvme0n1p5 /mnt						# 挂载Linux主分区
+dd if=/dev/nvme0n1p3 of=/mnt/opt/windows.img	# 拷贝分区3（数据分区），保存在/opt/windows.img（请根据你实际的分区更改）
+dd if=/dev/nvme0n1p2 of=/mnt/opt/msr.img status=progress	# 拷贝分区2（保留分区），并且可查看进度
 </code></pre>
-<p>$pythonPath 表示的是使用上面已经设置好的 pythonPath 的值，此值会随 python 插件更换解释器而更换<br>
-$fullFileName 则是引用当前 python 文件的路径</p>
-<p>最后将 <code>&quot;code-runner.runInTerminal&quot;</code> 所对应的值改为 <code>true</code>，就大功告成啦 ~</p>
-<h2 id="参考">参考</h2>
-<p>[1] <a href="https://stackoverflow.com/questions/50689210/how-to-allow-vs-code-to-take-input-from-users">How to allow VS Code to take input from users?</a></p>
+<p>可以把输出进行压缩</p>
+<pre><code>dd if=/dev/nvme0n1p3 | gzip &gt; windows.img
+</code></pre>
+<h2 id="使用-fdisk-重新分区">使用 fdisk 重新分区</h2>
+<pre><code>fdisk /dev/nvme0n1	# 选中要操作的磁盘
+</code></pre>
+<p>进入交互环境后，可以用 <code>m</code> 获得帮助。我需要对 efi 进行扩容，所以用 <code>p</code> 先查看原来的情况。</p>
+<pre><code>Device				Start       End   Sectors   Size Type
+/dev/nvme0n1p1       2048    206847    204800   100M EFI System
+/dev/nvme0n1p2	   206848    239615     32768    16M Microsoft reserved
+/dev/nvme0n1p3     239616       ...       ...    ... Microsoft basic data
+/dev/nvme0n1p4        ...       ...       ...    ... Windows recovery environment
+/dev/nvme0n1p5        ...       ...       ...    ... Linux filesystem
+</code></pre>
+<p><strong>记住 efi 起始扇区号</strong>，然后 <code>d</code> 删除第一个、第二个和第三个分区。再按 <code>n</code> 新建分区，number 是 1，起始扇区号填回原来的，大小选择 <code>+1G</code>，这样相当于把原来的分区扩容到了 1 GB。</p>
+<p>选择大小后会提示是否移除原有签名，选择“否”。</p>
+<pre><code>Do you want to remove the signature? [Y]es/[N]o: n
+</code></pre>
+<p>分区 2 的起始扇区号可以紧接着上一个分区，大小 <code>+16M</code>，不过新建出来的分区默认类型是 Linux filesystem，可以用 <code>t</code> 更改成 Microsoft reserved。分区 3 也是同理。<strong>需要注意的是新建的分区不能比原来的小，不然 dd 无法写入</strong>。</p>
+<p>修改完成后，先用 <code>p</code> 查看是否有误，无误后可以用 <code>w</code> 写入磁盘。</p>
+<p>但是出去用 <code>df -h</code> 查看的话，会发现 efi 还是只有原来的大小，因为文件系统并没有进行扩容，需要单独用 <code>fatresize</code> 进行调整。</p>
+<pre><code>fatresize -s max /dev/nvme0n1p1
+</code></pre>
+<p>但是却提示。。。</p>
+<pre><code>GNU Parted cannot resize this partition to this size.We're working on it.
+</code></pre>
+<p>查了一下，好像是这个工具存在的 bug，我们直接挂载 efi，备份里面的文件，再重新格式化好了。</p>
+<pre><code>mkdir /mnt/part1
+mount /dev/nvme0n1p1 /mnt/part1
+cp -r /mnt/part1 /mnt/opt/
+umount /mnt/part1
+
+mkfs.fat -F32 /dev/nvme0n1p1	# 把efi格式化成FAT32
+mkfs.ntfs /dev/nvme0n1p3		# 顺便把分区3格式化成NTFS
+
+mount /dev/nvme0n1p1 /mnt/part1
+cp -r /mnt/opt/part1/* /mnt/part1/
+umount /mnt/part1 
+</code></pre>
+<h2 id="dd-复原分区">dd 复原分区</h2>
+<pre><code>dd if=/mnt/opt/windows.img of=/dev/nvme0n1p3	# 复原Windows数据分区
+dd if=/mnt/opt/msr.img of=/dev/nvme0n1p2	    # 复原保留分区
+
+gzip -dc windows.img | dd of=/dev/nvme0n1p3		# 从压缩过的文件进行复原
+</code></pre>
+<h2 id="检查文件系统">检查文件系统</h2>
+<pre><code>fsck -r /dev/nvme0n1p3	# -r参数，如果检查有错则由使用者回答是否修复
+</code></pre>
+<h2 id="修复-grub-引导">修复 GRUB 引导</h2>
+<p>因为分区的 uuid 已经变了，所以需要更新 grub 配置。</p>
+<p>检查一下 <code>/mnt/etc/fstab</code>，正常来说如果扩容时没移除签名，fstab 则不用更新，否则 <code>/boot</code> 部分要更改成 efi 的新 uuid。</p>
+<pre><code>arch-chroot /mnt			# 因为grub不在Live CD，需要chroot
+mount /dev/nvme0n1p3 /mnt	# 挂载Windows分区，不然探测不到。注意这里的/mnt目录是chroot之后的（原本Linux filesystem里面的）
+grub-mkconfig -o /boot/grub/grub.cfg	# 重新生成grub配置
+</code></pre>
+<p>如果没有探测到，请查看 <code>/etc/default/grub</code> 中是否已经取消下面的注释</p>
+<pre><code>GRUB_DISABLE_OS_PROBER=false
+</code></pre>
+<h2 id="修复-windows-引导">修复 Windows 引导</h2>
+<p>这时候还是不能进入 Windows，查看了一下 bcd 信息，发现 device 的路径丢失了 QAQ</p>
+<p><strong>下面的操作都在 Windows 恢复环境中进行</strong></p>
+<pre><code>bcdedit /enum
+</code></pre>
+<p>输出如下</p>
+<pre><code>Windows 启动管理器
+--------------------
+标识符                  {bootmgr}
+device                  partition=\Device\HarddiskVolume3
+path                    \EFI\Microsoft\Boot\bootmgfw.efi
+description             Windows Boot Manager
+locale                  zh-CN
+inherit                 {globalsettings}
+default                 {current}
+resumeobject            {a3d......}
+displayorder            {current}
+toolsdisplayorder       {memdiag}
+timeout                 30
+
+Windows 启动加载器
+-------------------
+标识符                  {current}
+device                  Unknown
+path                    \Windows\system32\winload.efi
+description             Windows 10
+locale                  zh-CN
+inherit                 {bootloadersettings}
+recoverysequence        {a3d......}
+displaymessageoverride  Recovery
+recoveryenabled         Yes
+isolatedcontext         Yes
+allowedinmemorysettings 0x15000075
+osdevice                Unknown
+systemroot              \Windows
+resumeobject            {a3d......}
+nx                      OptIn
+bootmenupolicy          Standard
+</code></pre>
+<p>可以看见启动加载器的 device 和 osdevice 的值丢失了，需要手动重设。</p>
+<p>打开 diskpart，查看盘符</p>
+<pre><code>diskpart	# 进入交互模式
+
+DISKPART&gt; list vol	# 列出所有卷
+
+卷    ###   LTR  标签         FS     类型        大小     状态       信息
+----------  ---  -----------  -----  ----------  -------  ---------  --------
+卷     0     C                NTFS   磁盘分区    228 GB   正常       启动
+...   ...   ...               ...    ...         ...      ...        ...
+
+DISKPART&gt; exit
+</code></pre>
+<p>我的卷 0 是系统分区，分配了卷标 C，所以需要重设为 <code>partition=C:</code></p>
+<pre><code>bcdedit /set {current} device partition=C:
+bcdedit /set {current} osdevice partition=C:
+</code></pre>
+<p>至此 bcd 修复完成，重启即可恢复正常引导。</p>
+<h2 id="参考文档">参考文档</h2>
+<ol>
+<li><a href="https://docs.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/bcd-system-store-settings-for-uefi?view=windows-10">UEFI 的 BCD 系统存储设置</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/bcdedit-command-line-options?view=windows-10">BCDEdit 命令行选项</a></li>
+<li><a href="https://bugzilla.gnome.org/show_bug.cgi?id=649324">failure to move / resize fat32 partitions less than 256 MB in size</a></li>
+</ol>
 
         </div>
         
@@ -270,14 +390,11 @@ $fullFileName 则是引用当前 python 文件的路径</p>
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="https://blog.mashiro.nl/posts/technology/%E4%B8%AD%E7%A7%91%E5%A4%A7hackergame-2021/" class="block">中科大Hackergame 2021</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="https://blog.mashiro.nl/posts/daliy/%E8%BF%81%E7%A7%BB%E6%9D%82%E8%B0%88/" class="block">迁移&amp;杂谈</a>
+        <a href="https://blog.mashiro.nl/posts/technology/%E4%BD%BF%E7%94%A8git-rebase%E5%88%A0%E9%99%A4commit%E8%AE%B0%E5%BD%95/" class="block">使用Git rebase删除commit记录</a>
         
     </div>
 </div>
