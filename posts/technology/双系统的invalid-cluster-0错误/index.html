@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>迁移Windows分区 | 再聚樱花庄</title>
+<title>双系统的invalid cluster 0错误 | 再聚樱花庄</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.0" />
 <link rel="stylesheet" href="https://blog.mashiro.nl/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://blog.mashiro.nl/images/favicon-32x32_huc09ddb48d112dc5644e1933aededdf3e_1128_180x180_fill_q75_box_center.jpg">
 
 <meta name="description"
-  content="使用dd命令拷贝整个分区">
+  content="被Windows坑了？？？">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"https://blog.mashiro.nl/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"迁移Windows分区",
-      "item":"https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/"}]
+      "name":"双系统的invalid cluster 0错误",
+      "item":"https://blog.mashiro.nl/posts/technology/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84invalid-cluster-0%E9%94%99%E8%AF%AF/"}]
 }
 </script>
 
@@ -83,11 +83,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/"
+        "@id": "https://blog.mashiro.nl/posts/technology/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84invalid-cluster-0%E9%94%99%E8%AF%AF/"
     },
-    "headline": "迁移Windows分区 | 再聚樱花庄","datePublished": "2022-06-04T16:30:45+00:00",
-    "dateModified": "2022-06-04T16:30:45+00:00",
-    "wordCount":  1599 ,
+    "headline": "双系统的invalid cluster 0错误 | 再聚樱花庄","datePublished": "2022-06-08T19:20:42+00:00",
+    "dateModified": "2022-06-08T19:20:42+00:00",
+    "wordCount":  599 ,
     "publisher": {
         "@type": ["计算机技术","二次元"],
         "name": "Mashiro",
@@ -96,20 +96,20 @@
             "url": "https://cdn.jsdelivr.net/gh/guohoo/blog-source@master/modules/avatar.jpg"
         }
         },
-    "description": "使用dd命令拷贝整个分区"
+    "description": "被Windows坑了？？？"
 }
-</script><meta property="og:title" content="迁移Windows分区 | 再聚樱花庄" />
+</script><meta property="og:title" content="双系统的invalid cluster 0错误 | 再聚樱花庄" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="https://blog.mashiro.nl/images/favicon-32x32.jpg">
 
 
-<meta property="og:url" content="https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/" />
+<meta property="og:url" content="https://blog.mashiro.nl/posts/technology/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84invalid-cluster-0%E9%94%99%E8%AF%AF/" />
 
 
 
-<meta property="og:description" content="使用dd命令拷贝整个分区" />
+<meta property="og:description" content="被Windows坑了？？？" />
 
 
 
@@ -125,15 +125,19 @@
 
 
 
-<meta property="article:published_time" content="2022-06-04T16:30:45&#43;00:00" />
+<meta property="article:published_time" content="2022-06-08T19:20:42&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-06-04T16:30:45&#43;00:00" />
+<meta property="article:modified_time" content="2022-06-08T19:20:42&#43;00:00" />
 
 
 
 <meta property="article:section" content="posts" />
 
+
+
+
+<meta property="og:see_also" content="https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/" />
 
 
 
@@ -211,15 +215,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">迁移Windows分区</h1>
+        <h1 class="font-bold text-3xl text-primary-text">双系统的invalid cluster 0错误</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="me-6 my-2">
         <i class="fas fa-calendar me-1"></i>
-        <span>2022-06-04</span>
+        <span>2022-06-08</span>
     </div>
     <div class="me-6 my-2">
         <i class="fas fa-clock me-1"></i>
-        <span>4分钟阅读时长</span>
+        <span>2分钟阅读时长</span>
     </div>
     
     
@@ -238,144 +242,30 @@
         
 
         <div class="content">
-            <p>目前在使用 Arch + Windows 双系统进行工作，但由于是先安装的 Windows，所以默认分配的 efi 分区只有 100MB，而 <code>/boot</code> 这个目录我也挂载到这个分区上，故内核更新时经常空间不足，所以需要对 efi 进行扩容。不过 efi、保留分区以及 Windows 的基本数据分区是紧密相连的，所以需要对后面的分区向右移动才能进行扩容。</p>
-<h2 id="准备工作">准备工作</h2>
-<ol>
-<li>
-<p>首先需要对分区进行一个压缩，此处主要是数据分区。先在 Windows 里面用磁盘工具，把原来分区的尾部裁出来（右键此电脑 &gt; 管理 &gt; 磁盘管理 &gt; 右键磁盘 &gt; 压缩卷），大小选择为最大。</p>
-</li>
-<li>
-<p>可以准备一个 Linux 的 Live CD，当然直接用磁盘上的 Linux 也可以，不过操作前记得卸载相应的分区（下面的操作基于 Live CD 环境）。</p>
-</li>
-</ol>
-<h2 id="使用-dd-拷贝分区">使用 dd 拷贝分区</h2>
-<p>dd 是一个简单粗暴的工具，不基于文件系统拷贝文件，而是直接复制硬盘上的 0 和 1，可以把分区整个拷贝下来。</p>
-<pre><code>fdisk -l	# 查看硬盘上的分区信息
-mount /dev/nvme0n1p5 /mnt						# 挂载Linux主分区
-dd if=/dev/nvme0n1p3 of=/mnt/opt/windows.img	# 拷贝分区3（数据分区），保存在/opt/windows.img（请根据你实际的分区更改）
-dd if=/dev/nvme0n1p2 of=/mnt/opt/msr.img status=progress	# 拷贝分区2（保留分区），并且可查看进度
+            <h2 id="开机的-error">开机的 error</h2>
+<p>更新内核后遇到了一件奇怪的事情，一旦启动过 Windows，关机再启动 Arch 就会报错如下</p>
+<pre><code>error: invalid cluster 0
 </code></pre>
-<p>可以把输出进行压缩</p>
-<pre><code>dd if=/dev/nvme0n1p3 | gzip &gt; windows.img
+<p>这个错误之前在 Windows 虚拟机没完全关机时出现过，但是当时也没搞清楚原因。</p>
+<p>查了一下，初步判断 efi 分区出问题了，先用 fsck 检查一下文件系统</p>
+<pre><code>fsck -r /dev/nvme0n1p1
 </code></pre>
-<h2 id="使用-fdisk-重新分区">使用 fdisk 重新分区</h2>
-<pre><code>fdisk /dev/nvme0n1	# 选中要操作的磁盘
-</code></pre>
-<p>进入交互环境后，可以用 <code>m</code> 获得帮助。我需要对 efi 进行扩容，所以用 <code>p</code> 先查看原来的情况。</p>
-<pre><code>Device				Start       End   Sectors   Size Type
-/dev/nvme0n1p1       2048    206847    204800   100M EFI System
-/dev/nvme0n1p2	   206848    239615     32768    16M Microsoft reserved
-/dev/nvme0n1p3     239616       ...       ...    ... Microsoft basic data
-/dev/nvme0n1p4        ...       ...       ...    ... Windows recovery environment
-/dev/nvme0n1p5        ...       ...       ...    ... Linux filesystem
-</code></pre>
-<p><strong>记住 efi 起始扇区号</strong>，然后 <code>d</code> 删除第一个、第二个和第三个分区。再按 <code>n</code> 新建分区，number 是 1，起始扇区号填回原来的，大小选择 <code>+1G</code>，这样相当于把原来的分区扩容到了 1 GB。</p>
-<p>选择大小后会提示是否移除原有签名，选择“否”。</p>
-<pre><code>Do you want to remove the signature? [Y]es/[N]o: n
-</code></pre>
-<p>分区 2 的起始扇区号可以紧接着上一个分区，大小 <code>+16M</code>，不过新建出来的分区默认类型是 Linux filesystem，可以用 <code>t</code> 更改成 Microsoft reserved。分区 3 也是同理。<strong>需要注意的是新建的分区不能比原来的小，不然 dd 无法写入</strong>。</p>
-<p>修改完成后，先用 <code>p</code> 查看是否有误，无误后可以用 <code>w</code> 写入磁盘。</p>
-<p>但是出去用 <code>df -h</code> 查看的话，会发现 efi 还是只有原来的大小，因为文件系统并没有进行扩容，需要单独用 <code>fatresize</code> 进行调整。</p>
-<pre><code>fatresize -s max /dev/nvme0n1p1
-</code></pre>
-<p>但是却提示。。。</p>
-<pre><code>GNU Parted cannot resize this partition to this size.We're working on it.
-</code></pre>
-<p>查了一下，好像是这个工具存在的 bug，我们直接挂载 efi，备份里面的文件，再重新格式化好了。</p>
-<pre><code>mkdir /mnt/part1
-mount /dev/nvme0n1p1 /mnt/part1
-cp -r /mnt/part1 /mnt/opt/
-umount /mnt/part1
+<p>显示了非常多的 differences，修复后再进入 Arch，又提示 <code>prematrue end of file /vmlinuz-linux</code>，估计是内核被修坏了，重新部署</p>
+<pre><code>mount /dev/nvme0n1p5 /mnt
+mount /dev/nvme0n1p1 /mnt/boot
 
-mkfs.fat -F32 /dev/nvme0n1p1	# 把efi格式化成FAT32
-mkfs.ntfs /dev/nvme0n1p3		# 顺便把分区3格式化成NTFS
-
-mount /dev/nvme0n1p1 /mnt/part1
-cp -r /mnt/opt/part1/* /mnt/part1/
-umount /mnt/part1 
+arch-chroot /mnt
+pacman -Syu linux
 </code></pre>
-<h2 id="dd-复原分区">dd 复原分区</h2>
-<pre><code>dd if=/mnt/opt/windows.img of=/dev/nvme0n1p3	# 复原Windows数据分区
-dd if=/mnt/opt/msr.img of=/dev/nvme0n1p2	    # 复原保留分区
-
-gzip -dc windows.img | dd of=/dev/nvme0n1p3		# 从压缩过的文件进行复原
-</code></pre>
-<h2 id="检查文件系统">检查文件系统</h2>
-<pre><code>fsck -r /dev/nvme0n1p3	# -r参数，如果检查有错则由使用者回答是否修复
-</code></pre>
-<h2 id="修复-grub-引导">修复 GRUB 引导</h2>
-<p>因为分区的 uuid 已经变了，所以需要更新 grub 配置。</p>
-<p>检查一下 <code>/mnt/etc/fstab</code>，正常来说如果扩容时没移除签名，fstab 则不用更新，否则 <code>/boot</code> 部分要更改成 efi 的新 uuid。</p>
-<pre><code>arch-chroot /mnt			# 因为grub不在Live CD，需要chroot
-mount /dev/nvme0n1p3 /mnt	# 挂载Windows分区，不然探测不到。注意这里的/mnt目录是chroot之后的（原本Linux filesystem里面的）
-grub-mkconfig -o /boot/grub/grub.cfg	# 重新生成grub配置
-</code></pre>
-<p>如果没有探测到，请查看 <code>/etc/default/grub</code> 中是否已经取消下面的注释</p>
-<pre><code>GRUB_DISABLE_OS_PROBER=false
-</code></pre>
-<h2 id="修复-windows-引导">修复 Windows 引导</h2>
-<p>这时候还是不能进入 Windows，查看了一下 bcd 信息，发现 device 的路径丢失了 QAQ</p>
-<p><strong>下面的操作都在 Windows 恢复环境中进行</strong></p>
-<pre><code>bcdedit /enum
-</code></pre>
-<p>输出如下</p>
-<pre><code>Windows 启动管理器
---------------------
-标识符                  {bootmgr}
-device                  partition=\Device\HarddiskVolume3
-path                    \EFI\Microsoft\Boot\bootmgfw.efi
-description             Windows Boot Manager
-locale                  zh-CN
-inherit                 {globalsettings}
-default                 {current}
-resumeobject            {a3d......}
-displayorder            {current}
-toolsdisplayorder       {memdiag}
-timeout                 30
-
-Windows 启动加载器
--------------------
-标识符                  {current}
-device                  Unknown
-path                    \Windows\system32\winload.efi
-description             Windows 10
-locale                  zh-CN
-inherit                 {bootloadersettings}
-recoverysequence        {a3d......}
-displaymessageoverride  Recovery
-recoveryenabled         Yes
-isolatedcontext         Yes
-allowedinmemorysettings 0x15000075
-osdevice                Unknown
-systemroot              \Windows
-resumeobject            {a3d......}
-nx                      OptIn
-bootmenupolicy          Standard
-</code></pre>
-<p>可以看见启动加载器的 device 和 osdevice 的值丢失了，需要手动重设。</p>
-<p>打开 diskpart，查看盘符</p>
-<pre><code>diskpart	# 进入交互模式
-
-DISKPART&gt; list vol	# 列出所有卷
-
-卷    ###   LTR  标签         FS     类型        大小     状态       信息
-----------  ---  -----------  -----  ----------  -------  ---------  --------
-卷     0     C                NTFS   磁盘分区    228 GB   正常       启动
-...   ...   ...               ...    ...         ...      ...        ...
-
-DISKPART&gt; exit
-</code></pre>
-<p>我的卷 0 是系统分区，分配了卷标 C，所以需要重设为 <code>partition=C:</code></p>
-<pre><code>bcdedit /set {current} device partition=C:
-bcdedit /set {current} osdevice partition=C:
-</code></pre>
-<p>至此 bcd 修复完成，重启即可恢复正常引导。</p>
-<h2 id="参考文档">参考文档</h2>
-<ol>
-<li><a href="https://docs.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/bcd-system-store-settings-for-uefi?view=windows-10">UEFI 的 BCD 系统存储设置</a></li>
-<li><a href="https://docs.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/bcdedit-command-line-options?view=windows-10">BCDEdit 命令行选项</a></li>
-<li><a href="https://bugzilla.gnome.org/show_bug.cgi?id=649324">failure to move / resize fat32 partitions less than 256 MB in size</a></li>
-</ol>
+<p>修复后倒是能进入了，但是关机后启动 Windows，又恢复原样了😡</p>
+<h2 id="解决方法">解决方法</h2>
+<p>感觉像 Windows 又把 efi 重置回之前那个状态，到 Arch CN 的官方 tg 群组问了一下，有个大佬提醒了我：“开了 Windows 的「快速启动」功能，EFI 文件系统没有被卸载”</p>
+<p>赶紧回 Windows 检查了一下，<code>设置 &gt; 系统 &gt; 电源和睡眠 &gt; 其他电源设置 &gt; 选择电源按钮的功能（左侧）</code>，果然！！！Windows 不知道什么时候帮我开启了这项功能，关掉之后问题就解决了。</p>
+<p>因为现在系统都是安装在固态硬盘上面，所以关闭了也不会对启动速度产生太大的影响。</p>
+<h2 id="快速启动是什么黑魔法">「快速启动」是什么黑魔法</h2>
+<p>根据我肤浅的理解，快速启动类似于休眠。</p>
+<p>系统一旦关机，内存就会被清空 <del>（拿液氮冻住内存的叉出去！</del> 不过如果开启了快速启动，系统会将内存中的所有内容保存到硬盘中，生成一个名为 hiberfil.sys 的文件，而在唤醒休眠或者再次开机时，内存则会直接读取 hiberfil.sys 文件，无需重新逐一加载驱动及程序等。</p>
+<p>难怪之前电池没电关机了，系统还能还原关机前的工作状态，所以和我大喊 Windows yes!!!（逃 ~</p>
 
         </div>
         
@@ -390,14 +280,11 @@ bcdedit /set {current} osdevice partition=C:
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="https://blog.mashiro.nl/posts/technology/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84invalid-cluster-0%E9%94%99%E8%AF%AF/" class="block">双系统的invalid cluster 0错误</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="https://blog.mashiro.nl/posts/technology/%E4%BD%BF%E7%94%A8git-rebase%E5%88%A0%E9%99%A4commit%E8%AE%B0%E5%BD%95/" class="block">使用Git rebase删除commit记录</a>
+        <a href="https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/" class="block">迁移Windows分区</a>
         
     </div>
 </div>
@@ -462,6 +349,17 @@ bcdedit /set {current} osdevice partition=C:
     
 
     
+    
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">相关</h2>
+        <div class="content">
+            
+            <a href="https://blog.mashiro.nl/posts/technology/%E8%BF%81%E7%A7%BBwindows%E5%88%86%E5%8C%BA/">迁移Windows分区</a>
+            <br />
+            
+        </div>
+    </div>
     
 </div>
 <script>
